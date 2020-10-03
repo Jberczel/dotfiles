@@ -1,0 +1,15 @@
+[color]
+	ui = true
+[user]
+	name = Jberczel
+	email = jxberc@gmail.com
+[alias]
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  blg = log --oneline --graph --decorate --remotes --branches
+	co = checkout
+	b = branch
+	s = status
+  st = stash
+  cp = cherry-pick
+[core]
+	autocrlf = input
