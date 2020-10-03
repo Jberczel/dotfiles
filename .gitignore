@@ -1,0 +1,14 @@
+*.dump
+*.log
+*.orig
+*.swp
+.DS_Store
+.env
+.idea
+.rvmrc
+/.bundle
+/log/*.log
+/tmp
+tags
+/node_modules
+/**/node_modules
