@@ -41,7 +41,9 @@ nnoremap <silent> <leader>s :BLines<CR>
 " Yank current word (yiw), then run rip grep and paste current word (<C-R>"),
 " and run command
 nnoremap <leader>a yiw :Rg <C-R>"<CR>
+nnoremap <leader>A :Rg<space>
 vnoremap <leader>a y :Rg <C-R>0<CR>
+
 
 " Add preview to ripgrep
 command! -bang -nargs=* Rg
@@ -98,13 +100,19 @@ call plug#begin('~/.vim/plugged')
     let g:gruvbox_contrast_dark = 'soft'
 
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'   }
-  Plug 'preservim/nerdcommenter'
+  Plug 'tpope/vim-commentary'
 
   Plug 'slim-template/vim-slim'
   Plug 'ntpeters/vim-better-whitespace'
+
+  " splitjoin examples:
+  "  gS
+  "  gJ
   Plug 'andrewradev/splitjoin.vim'
   Plug 'dense-analysis/ale'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  Plug 'henrik/vim-indexed-search'
 
 call plug#end()
 
@@ -216,4 +224,26 @@ augroup END
 nmap ghs <Plug>(GitGutterStageHunk)
 nmap ghu <Plug>(GitGutterUndoHunk)
 nmap ghp <Plug>(GitGutterPreviewHunk)
+
+" Toggle relative or absolute number lines
+function! NumberToggle()
+    if(&nu == 1)
+        set nu!
+        set rnu
+    else
+        set nornu
+        set nu
+    endif
+endfunction
+
+nnoremap <Leader>nt :call NumberToggle()<CR>
+
+" Swap 0 and ^. I tend to want to jump to the first non-whitespace character
+" so make that the easier one to do.
+nnoremap 0 ^
+nnoremap ^ 0
+
+nmap cm  <Plug>Commentary
+
+nnoremap <Leader>gb :Gblame<CR>
 
