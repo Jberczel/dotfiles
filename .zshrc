@@ -102,7 +102,8 @@ alias half="x5050"
 alias ctags="`brew --prefix`/bin/ctags"
 
 # NIFA work stuff
-alias nifau="~/Code/work/nifa-projects/nifa-docker-env/scripts/compose-group-up.sh reeport"
+alias reeportup="~/Code/work/nifa-projects/nifa-docker-env/scripts/compose-group-up.sh reeport"
+alias esup="~/Code/work/nifa-projects/nifa-docker-env/scripts/compose-group-up.sh enterprise-search"
 alias nifad="~/Code/work/nifa-projects/nifa-docker-env/scripts/compose-all-down.sh"
 alias nifab="docker-compose exec rails_app bash"
 alias nifal="log -f log/development.log"

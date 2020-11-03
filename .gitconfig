@@ -5,7 +5,7 @@
 	email = jxberc@gmail.com
 
 [alias]
-  b   = branch
+  b   = branch -vv
   blg = log --oneline --graph --decorate --remotes --branches
   co  = checkout
   cp  = cherry-pick
@@ -20,3 +20,4 @@
   ignored  = !git ls-files -v | grep "^S"
 [core]
   autocrlf = input
+	attributesfile = /Users/jxberc/.gitattributes
